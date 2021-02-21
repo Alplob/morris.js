@@ -67,31 +67,12 @@
       <div class='row'>
         <div class='col'>
           <h3 style='margin-top: 86px;'>Installation</h3>
-          <p>You can either download the latest version of Morris.js06 from the <a href='https://github.com/pierresh/morris.js/releases/latest' target=_blank>GitHub releases</a>.</p>
-          <p class='no_margin'>Or install via npm:</p>
+          <p class='no_margin'>Just install it via npm:</p>
           <pre>
             <code class='bash'>
     npm install morris.js06
             </code>
           </pre>
-          <p>Then add <em>morris.min.js</em>, <em>morris.css</em> and <em>raphael-min.js</em> to your page.</p>
-          <p class='no_margin'><a href='http://dmitrybaranovskiy.github.io/raphael/' target=_blank>Raphaël</a> can be added to your page through a CDN:</p>
-          <pre>
-            <code class='html'>
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"&gt;&lt;/script&gt;
-            </code>
-          </pre>
-          <h3>With Angular / Ionic or Vue.js</h3>
-          <p>Morris.js 06 can be easily used with these frameworks thanks to these 2 wrappers (remark: no need to add jQuery):</p>
-          <ul style='margin-bottom: 25px;'>
-            <li><a href='https://github.com/mika-el/angular-morris-js' target=_blank>angular-morris-js</a> (the directive and the interface can be used directly)</li>
-            <li><a href='https://github.com/bbonnin/vue-morris' target=_blank>vue-morris</a></li>
-          </ul>
-          <p>If you use Ionic 3, you need to add Raphael in webpack settings in the file <code>node_modules/@ionic/app-scripts/config/webpack.config.js</code>, in the plugin parts of <strong>devConfig</strong> and <strong>prodConfig</strong>:</p>
-          <pre><code class="bash hljs">plugins: [
-	...,
-	new webpack.ProvidePlugin({ Raphael: 'raphael' })
-]</code></pre><br>
 
           <h3>Your first chart</h3>
           <p class='no_margin'>Start by adding a <code>&lt;div&gt;</code> to your page that will contain your chart. Make sure it has an ID so you can refer to it in your Javascript later.</p>
@@ -101,10 +82,12 @@
             </code>
           </pre>
           <p class='no_margin'>
-            Next add a <code>&lt;script&gt;</code> block to the end of your page, containing the following javascript code:
+            And then add the following javascript code:
           </p>
           <pre>
             <code class='language-javascript' data-lang='javascript'>
+    import { Morris } from 'morris.js06';
+
     new Morris.Line({
       // ID of the element in which to draw the chart.
       element: 'myfirstchart',
@@ -122,6 +105,8 @@
       ykeys: ['value'],
       // Labels for the ykeys -- will be displayed when you hover over the chart.
       labels: ['Value']
+    }).on('click', (index, item) => {
+      console.log(index, item);
     });
             </code>
           </pre>
@@ -129,18 +114,18 @@
           <div id='myfirstchart'></div>
         </div>
       </div>
-    </div>
-    <div class='row'>
-      <div class='col'>
-        <h3 style='margin-top: 30px;'>What Next?</h3>
-        <p>Check out the rest of the documentation:</p>
-        <ul>
-          <li><a href='lines.html'>Line and area charts</a></li>
-          <li><a href='bars.html'>Bar charts</a></li>
-          <li><a  href='donuts.html'>Donut and pie charts</a></li>
-        </ul>
+      <div class='row'>
+        <div class='col'>
+          <h3 style='margin-top: 30px;'>What Next?</h3>
+          <p>Check out the rest of the documentation:</p>
+          <ul>
+            <li><a href='lines.html'>Line and area charts</a></li>
+            <li><a href='bars.html'>Bar charts</a></li>
+            <li><a  href='donuts.html'>Donut and pie charts</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+	</div>
     <script>
         new Morris.Line({
           // ID of the element in which to draw the chart.
