@@ -82,18 +82,29 @@
             </code>
           </pre>
           <p class='no_margin'>
-            And then add the following javascript code:
+            And then add the following lines, if you want to import wth node:
           </p>
           <pre>
             <code class='language-javascript' data-lang='javascript'>
     // Either import with Node
     import { Morris } from 'morris.js06';
-
+</code>
+</pre>
+          <p class='no_margin'>
+           Or just include the filese:
+          </p>
+          <pre>
+            <code class='language-javascript' data-lang='html'>
     // Or just include the files
     <script src='path_to/raphael.min.js'></script>
     <script src='path_to/morris.js'></script>
-
-    // Then you can create your first chart
+</code>
+</pre>
+          <p class='no_margin'>
+            Then you can create your first chart:
+          </p>
+          <pre>
+            <code class='language-javascript' data-lang='javascript'>	
     new Morris.Line({
       // ID of the element in which to draw the chart.
       element: 'myfirstchart',
