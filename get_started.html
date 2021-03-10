@@ -86,8 +86,14 @@
           </p>
           <pre>
             <code class='language-javascript' data-lang='javascript'>
+    // Either import with Node
     import { Morris } from 'morris.js06';
 
+    // Or just include the files
+    <script src='path_to/raphael.min.js'></script>
+    <script src='path_to/morris.js'></script>
+
+    // Then you can create your first chart
     new Morris.Line({
       // ID of the element in which to draw the chart.
       element: 'myfirstchart',
