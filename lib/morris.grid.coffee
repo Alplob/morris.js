@@ -273,7 +273,7 @@ class Morris.Grid extends Morris.EventEmitter
         step = (@ymax - @ymin) / (@options.numLines - 1)
 
         if @options.gridIntegers
-          step = Math.max(1, Math.round(step));
+          step = Math.max(1, Math.round(step))
 
         @grid = for y in [@ymin..@ymax] by step
           parseFloat(y.toFixed(2))
@@ -815,10 +815,10 @@ Morris.parseDate = (date) ->
       parseInt(o[3], 10)).getTime()
   else if p
     # calculate number of weeks in year given
-    ret = new Date(parseInt(p[1], 10), 0, 1);
+    ret = new Date(parseInt(p[1], 10), 0, 1)
     # first thursday in year (ISO 8601 standard)
     if ret.getDay() isnt 4
-      ret.setMonth(0, 1 + ((4 - ret.getDay()) + 7) % 7);
+      ret.setMonth(0, 1 + ((4 - ret.getDay()) + 7) % 7)
     # add weeks
     ret.getTime() + parseInt(p[2], 10) * 604800000
   else if q

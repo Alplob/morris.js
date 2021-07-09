@@ -129,18 +129,18 @@ class Morris.Donut extends Morris.EventEmitter
       dist = dist * @options.data[i].ratio
 
       if @options.dataLabels && @values.length >= 1
-        p_sin_p0 = Math.sin((last + next)/2);
-        p_cos_p0 = Math.cos((last + next)/2);
+        p_sin_p0 = Math.sin((last + next)/2)
+        p_cos_p0 = Math.cos((last + next)/2)
         if @options.dataLabelsPosition == 'inside'
           if @options.donutType == 'pie'
-            label_x = parseFloat(cx) + parseFloat((dist) * 0.30 * p_sin_p0);
-            label_y = parseFloat(cy) + parseFloat((dist) * 0.30 * p_cos_p0);
+            label_x = parseFloat(cx) + parseFloat((dist) * 0.30 * p_sin_p0)
+            label_y = parseFloat(cy) + parseFloat((dist) * 0.30 * p_cos_p0)
           else
-            label_x = parseFloat(cx) + parseFloat((dist) * 0.39 * p_sin_p0);
-            label_y = parseFloat(cy) + parseFloat((dist) * 0.39 * p_cos_p0);
+            label_x = parseFloat(cx) + parseFloat((dist) * 0.39 * p_sin_p0)
+            label_y = parseFloat(cy) + parseFloat((dist) * 0.39 * p_cos_p0)
         else
-          label_x = parseFloat(cx) + parseFloat((dist - 9) * 0.5 * p_sin_p0);
-          label_y = parseFloat(cy) + parseFloat((dist - 9) * 0.5 * p_cos_p0);
+          label_x = parseFloat(cx) + parseFloat((dist - 9) * 0.5 * p_sin_p0)
+          label_y = parseFloat(cy) + parseFloat((dist - 9) * 0.5 * p_cos_p0)
 
         if @options.dataLabelsColor != 'auto'
           color = @options.dataLabelsColor
@@ -285,7 +285,7 @@ class Morris.DonutSegment extends Morris.EventEmitter
     @is_long = if (p1 - p0) > Math.PI then 1 else 0
 
     if @options.data[@index].ratio is undefined
-        @options.data[@index].ratio = 1
+      @options.data[@index].ratio = 1
     inner = @inner  * @options.data[@index].ratio
     @path = @calcSegment(inner + 3, inner + @outer - 5)
     @selectedPath = @calcSegment(inner + 3, inner + @outer)
@@ -339,7 +339,7 @@ class Morris.DonutSegment extends Morris.EventEmitter
     if @options.animate
       rPath = @raphael.path("M"+this.cx+","+this.cy+"Z")
         .attr(stroke: color, 'stroke-width': 2, opacity: 0)
-      do (rPath, path) =>
+      do (rPath, path) ->
         rPath.animate {path}, 500, '<>'
     else
       @raphael.path(path)
@@ -347,12 +347,12 @@ class Morris.DonutSegment extends Morris.EventEmitter
 
   drawDonutSegment: (path, fillColor, strokeColor, hoverFunction, clickFunction, leaveFunction) ->
     if @options.animate && @options.donutType == 'pie'
-      straightPath = path;
-      straightPath = path.replace('A', ',');
-      straightPath = straightPath.replace('M', '');
-      straightPath = straightPath.replace('C', ',');
-      straightPath = straightPath.replace('Z', '');
-      straightDots = straightPath.split(',');
+      straightPath = path
+      straightPath = path.replace('A', ',')
+      straightPath = straightPath.replace('M', '')
+      straightPath = straightPath.replace('C', ',')
+      straightPath = straightPath.replace('Z', '')
+      straightDots = straightPath.split(',')
 
       if @options.donutType == 'pie'
         straightPath = 'M'+straightDots[0]+','+straightDots[1]+','+straightDots[straightDots.length-2]+','+straightDots[straightDots.length-1]+','+straightDots[straightDots.length-2]+','+straightDots[straightDots.length-1]+'Z'
@@ -365,7 +365,7 @@ class Morris.DonutSegment extends Morris.EventEmitter
         .click(clickFunction)
         .mouseout(leaveFunction)
 
-      do (rPath, path) =>
+      do (rPath, path) ->
         rPath.animate {path}, 500, '<>'
     else
       if @options.donutType == 'pie'

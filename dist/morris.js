@@ -1253,7 +1253,6 @@ Licensed under the BSD-2-Clause License.
 
     function Line(options) {
       this.hilight = __bind(this.hilight, this);
-      this.escapeHTML = __bind(this.escapeHTML, this);
       this.onHoverOut = __bind(this.onHoverOut, this);
       this.onHoverMove = __bind(this.onHoverMove, this);
       this.onGridClick = __bind(this.onGridClick, this);
@@ -1476,8 +1475,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Line.prototype.escapeHTML = function(string) {
-      var map, reg,
-        _this = this;
+      var map, reg;
       map = {
         '&': '&amp;',
         '<': '&lt;',
@@ -1956,8 +1954,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Line.prototype.drawLinePath = function(path, lineColor, lineIndex) {
-      var ii, rPath, row, row_x, straightPath, _i, _len, _ref,
-        _this = this;
+      var ii, rPath, row, row_x, straightPath, _i, _len, _ref;
       if (this.options.animate) {
         straightPath = '';
         _ref = this.data;
@@ -2371,8 +2368,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Area.prototype.drawFilledPath = function(path, fill, areaIndex) {
-      var coords, pathBelow, r, rPath, straightPath,
-        _this = this;
+      var coords, pathBelow, r, rPath, straightPath;
       if (this.options.animate) {
         coords = (function() {
           var _i, _len, _ref, _results;
@@ -2431,7 +2427,6 @@ Licensed under the BSD-2-Clause License.
     __extends(Bar, _super);
 
     function Bar(options) {
-      this.escapeHTML = __bind(this.escapeHTML, this);
       this.onHoverOut = __bind(this.onHoverOut, this);
       this.onHoverMove = __bind(this.onHoverMove, this);
       this.onGridClick = __bind(this.onGridClick, this);
@@ -2545,8 +2540,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Bar.prototype.drawBarLine = function() {
-      var coord, coords, dim, g, grads, i, ii, ix, lg, nb, path, prevCoord, r, rPath, straightPath, x1, x2, y1, y2, _i, _j, _len, _len1, _ref, _results,
-        _this = this;
+      var coord, coords, dim, g, grads, i, ii, ix, lg, nb, path, prevCoord, r, rPath, straightPath, x1, x2, y1, y2, _i, _j, _len, _len1, _ref, _results;
       nb = this.options.ykeys.length - this.options.nbYkeys2;
       _ref = this.options.ykeys.slice(nb, this.options.ykeys.length);
       _results = [];
@@ -2978,8 +2972,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Bar.prototype.escapeHTML = function(string) {
-      var map, reg,
-        _this = this;
+      var map, reg;
       map = {
         '&': '&amp;',
         '<': '&lt;',
@@ -3447,8 +3440,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     DonutSegment.prototype.drawDonutArc = function(path, color) {
-      var rPath,
-        _this = this;
+      var rPath;
       if (this.options.animate) {
         rPath = this.raphael.path("M" + this.cx + "," + this.cy + "Z").attr({
           stroke: color,
@@ -3470,8 +3462,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     DonutSegment.prototype.drawDonutSegment = function(path, fillColor, strokeColor, hoverFunction, clickFunction, leaveFunction) {
-      var rPath, straightDots, straightPath,
-        _this = this;
+      var rPath, straightDots, straightPath;
       if (this.options.animate && this.options.donutType === 'pie') {
         straightPath = path;
         straightPath = path.replace('A', ',');
